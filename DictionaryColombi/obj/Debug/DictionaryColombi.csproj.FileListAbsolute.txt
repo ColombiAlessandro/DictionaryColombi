@@ -1,0 +1,11 @@
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\bin\Debug\DictionaryColombi.exe.config
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\bin\Debug\DictionaryColombi.exe
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\bin\Debug\DictionaryColombi.pdb
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.csproj.AssemblyReference.cache
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.csproj.SuggestedBindingRedirects.cache
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.Form1.resources
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.Properties.Resources.resources
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.csproj.GenerateResource.cache
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.csproj.CoreCompileInputs.cache
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.exe
+C:\Users\colombi.19314.PALEOCAPA\Desktop\DictionaryColombi\DictionaryColombi\obj\Debug\DictionaryColombi.pdb
