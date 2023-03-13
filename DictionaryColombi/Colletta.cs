@@ -8,66 +8,57 @@ namespace DictionaryColombi
 {
     public class Colletta
     {
-        private Dictionary<string, float> _elenco;
-        private float _sommaTot;
-        private List<string> _elencoPersone;
-        private int numeroPersone;
-        public List<string> ElencoPersone
-        {
-            get { return _elencoPersone; }
-            private set { _elencoPersone = value; }
-        }
-        public float SommaTotale
+        private Dictionary<string, decimal> _elenco;
+        private decimal _sommaTot;
+        public decimal SommaTotale
         {
             get { return _sommaTot; }
             private set { _sommaTot = value; }
         }
-        public Dictionary<string, float> Elenco
+        public Dictionary<string, decimal> Elenco
         {
             get { return _elenco; }
             private set { _elenco = value; }
         }
         public Colletta()
-        {
-            SommaTotale = -1;
-            ElencoPersone = new List<string>();
-            Elenco = new Dictionary<string, float>();
+        { 
+            Elenco = new Dictionary<string, decimal>();
         }
-        public void ImpostaSomma(float somma)
-        {
-            if (somma > 0)
-            {
-                SommaTotale = somma;
-                float nuovaMedia = SommaTotale / ElencoPersone.Count();
-                foreach (string persona in ElencoPersone)
-                {
-                    Elenco[persona] = nuovaMedia;
-                }
-            }
-            else throw new Exception("Il valore dev'essere maggiore di 0");
-        }
-        public void AggiungiPersone(string nomePersona)
+        public void AggiungiPersone(string nomePersona, decimal somma)
         {
             if (string.IsNullOrEmpty(nomePersona))
             {
                 throw new Exception("nome non valido");
             }
-            if (ElencoPersone.IndexOf(nomePersona) == -1)
+            if (!Elenco.ContainsKey(nomePersona))
             {
-                if (SommaTotale > 0)
+                if (somma > 0)
                 {
-                    float nuovaMedia = SommaTotale / ElencoPersone.Count();
-                    foreach (string persona in ElencoPersone)
-                    {
-                        Elenco[persona] = nuovaMedia;
-                    }
-                    Elenco.Add(nomePersona, nuovaMedia);
-                    ElencoPersone.Add(nomePersona);
+                    SommaTotale += somma;
+                    Elenco.Add(nomePersona, somma);
                 }
-                else throw new Exception("non è stata impostata la somma da dividere");
-                
+                else
+                {
+                    Elenco.Add(nomePersona, 0);
+                }
+
             }
-            else throw new Exception("Il nome è già presente");
+            else
+            {
+                if (somma > 0)
+                {
+                    Elenco[nomePersona] = somma;
+                }
+            }
+        }
+        public override string ToString()
+        {
+            string rtr = "";
+            foreach(string str in Elenco.Keys)
+            {
+                rtr += str + ";" +  Elenco[str].ToString() + ":";
+            }
+            return rtr;
         }
 
     }

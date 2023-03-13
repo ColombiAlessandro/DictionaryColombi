@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.list = new System.Windows.Forms.ListView();
-            this.confermaSomma = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.confermaPersona = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sommatotale = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,20 +47,10 @@
             this.list.TabIndex = 0;
             this.list.UseCompatibleStateImageBehavior = false;
             // 
-            // confermaSomma
-            // 
-            this.confermaSomma.Location = new System.Drawing.Point(593, 415);
-            this.confermaSomma.Name = "confermaSomma";
-            this.confermaSomma.Size = new System.Drawing.Size(88, 23);
-            this.confermaSomma.TabIndex = 1;
-            this.confermaSomma.Text = "Conferma";
-            this.confermaSomma.UseVisualStyleBackColor = true;
-            this.confermaSomma.Click += new System.EventHandler(this.confermaSomma_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 327);
+            this.label1.Location = new System.Drawing.Point(678, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 2;
@@ -69,7 +59,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(593, 368);
+            this.numericUpDown1.Location = new System.Drawing.Point(681, 107);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -91,7 +81,7 @@
             // 
             // confermaPersona
             // 
-            this.confermaPersona.Location = new System.Drawing.Point(595, 209);
+            this.confermaPersona.Location = new System.Drawing.Point(510, 181);
             this.confermaPersona.Name = "confermaPersona";
             this.confermaPersona.Size = new System.Drawing.Size(75, 23);
             this.confermaPersona.TabIndex = 4;
@@ -102,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(592, 58);
+            this.label2.Location = new System.Drawing.Point(507, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 5;
@@ -110,22 +100,31 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(595, 134);
+            this.textBox1.Location = new System.Drawing.Point(510, 107);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
+            // 
+            // sommatotale
+            // 
+            this.sommatotale.AutoSize = true;
+            this.sommatotale.Location = new System.Drawing.Point(12, 13);
+            this.sommatotale.Name = "sommatotale";
+            this.sommatotale.Size = new System.Drawing.Size(83, 13);
+            this.sommatotale.TabIndex = 7;
+            this.sommatotale.Text = "Somma totale: 0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sommatotale);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.confermaPersona);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.confermaSomma);
             this.Controls.Add(this.list);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -139,12 +138,12 @@
         #endregion
 
         private System.Windows.Forms.ListView list;
-        private System.Windows.Forms.Button confermaSomma;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button confermaPersona;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label sommatotale;
     }
 }
 

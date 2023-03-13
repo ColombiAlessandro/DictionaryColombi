@@ -31,14 +31,6 @@ namespace DictionaryColombi
 
         private void confermaSomma_Click(object sender, EventArgs e)
         {
-            try
-            {
-                colletta.ImpostaSomma(float.Parse(numericUpDown1.Value.ToString()));
-                updateCarrView();
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         private void SetHeaderList()
         {
@@ -58,28 +50,32 @@ namespace DictionaryColombi
             list.Items.Clear();
             list.View = View.Details;
             list.FullRowSelect = true;
-            foreach (string str in colletta.Elenco.Keys)
+            string[] riga = colletta.ToString().Split(':');
+            for(int i=0; i < colletta.Elenco.Count; i++)
             {
-                ListViewItem item = new ListViewItem();
-                item.SubItems.Add(str);
-                item.SubItems.Add(colletta.Elenco[str].ToString());
+                ListViewItem item = new ListViewItem(riga[i].Split(';'));
                 list.Items.Add(item);
-                list.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-
-                list.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
+            list.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            list.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            
         }
 
         private void confermaPersona_Click(object sender, EventArgs e)
         {
             try
             {
-                colletta.AggiungiPersone(textBox1.Text);
-            } catch(Exception ex)
+                colletta.AggiungiPersone(textBox1.Text, numericUpDown1.Value);
+                sommatotale.Text = "Somma totale: " + colletta.SommaTotale.ToString();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            updateCarrView();
+            finally
+            {
+                updateCarrView();
+            }
         }
     }
 }
