@@ -36,7 +36,7 @@ namespace DictionaryColombi
         {
             list.View = View.Details;
             list.FullRowSelect = true;
-            String[] intestazione = new string[] { "NOME", "SOMMA"};
+            String[] intestazione = new string[] { "NOME","COGNOME", "SOMMA", "TIPO DI VALUTA"};
             for (int i = 0; i < intestazione.Length; i++)
             {
                 list.Columns.Add(intestazione[i]);
@@ -65,8 +65,10 @@ namespace DictionaryColombi
         {
             try
             {
-                colletta.AggiungiPersone(textBox1.Text, numericUpDown1.Value);
-                sommatotale.Text = "Somma totale: " + colletta.SommaTotale.ToString();
+                Persona p = new Persona(NomeBox.Text, CognomeBox.Text);
+                Valuta v = new Valuta(comboBox1.Text, numericUpDown1.Value);
+                colletta.AggiungiPersone(p, v);
+                sommatotale.Text = "Somma totale: " + colletta.SommaTotale.ToString() + "€";
             }
             catch (Exception ex)
             {

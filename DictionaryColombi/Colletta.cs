@@ -8,44 +8,47 @@ namespace DictionaryColombi
 {
     public class Colletta
     {
-        private Dictionary<string, decimal> _elenco;
+        private Dictionary<Persona, Valuta> _elenco;
         private decimal _sommaTot;
         public decimal SommaTotale
         {
             get { return _sommaTot; }
             private set { _sommaTot = value; }
         }
-        public Dictionary<string, decimal> Elenco
+        public Dictionary<Persona, Valuta> Elenco
         {
             get { return _elenco; }
             private set { _elenco = value; }
         }
         public Colletta()
         { 
-            Elenco = new Dictionary<string, decimal>();
+            Elenco = new Dictionary<Persona, Valuta>();
         }
-        public void AggiungiPersone(string nomePersona, decimal somma)
+        public void AggiungiPersone(Persona nomePersona, Valuta somma)
         {
-            if (string.IsNullOrEmpty(nomePersona))
-            {
-                throw new Exception("nome non valido");
-            }
             if (!Elenco.ContainsKey(nomePersona))
             {
-                if (somma > 0)
+                if (somma.Valore >= 0)
                 {
-                    SommaTotale += somma;
                     Elenco.Add(nomePersona, somma);
-                }
-                else
-                {
-                    Elenco.Add(nomePersona, 0);
+                    switch (somma.TipoValuta)
+                    {
+                        case "Euro":
+                            SommaTotale += somma.Valore;
+                            break;
+                        case "Dollari":
+                            SommaTotale += somma.Valore *(decimal)0.94;
+                            break;
+                        case "Sterline":
+                            SommaTotale += somma.Valore*(decimal)1.13;
+                            break;
+                    }
                 }
 
             }
             else
             {
-                if (somma > 0)
+                if (somma.Valore >= 0)
                 {
                     Elenco[nomePersona] = somma;
                 }
@@ -54,9 +57,9 @@ namespace DictionaryColombi
         public override string ToString()
         {
             string rtr = "";
-            foreach(string str in Elenco.Keys)
+            foreach(Persona persona in Elenco.Keys)
             {
-                rtr += str + ";" +  Elenco[str].ToString() + ":";
+                rtr += persona.ToString() + Elenco[persona].ToString() + ":";
             }
             return rtr;
         }

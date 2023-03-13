@@ -33,8 +33,13 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.confermaPersona = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NomeBox = new System.Windows.Forms.TextBox();
             this.sommatotale = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CognomeBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(678, 58);
+            this.label1.Location = new System.Drawing.Point(665, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 2;
@@ -59,7 +64,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(681, 107);
+            this.numericUpDown1.Location = new System.Drawing.Point(668, 107);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             9999999,
             0,
@@ -81,7 +86,7 @@
             // 
             // confermaPersona
             // 
-            this.confermaPersona.Location = new System.Drawing.Point(510, 181);
+            this.confermaPersona.Location = new System.Drawing.Point(606, 198);
             this.confermaPersona.Name = "confermaPersona";
             this.confermaPersona.Size = new System.Drawing.Size(75, 23);
             this.confermaPersona.TabIndex = 4;
@@ -92,18 +97,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 58);
+            this.label2.Location = new System.Drawing.Point(513, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Aggiungi persona";
             // 
-            // textBox1
+            // NomeBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(510, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.NomeBox.Location = new System.Drawing.Point(516, 107);
+            this.NomeBox.Name = "NomeBox";
+            this.NomeBox.Size = new System.Drawing.Size(100, 20);
+            this.NomeBox.TabIndex = 6;
             // 
             // sommatotale
             // 
@@ -114,13 +119,65 @@
             this.sommatotale.TabIndex = 7;
             this.sommatotale.Text = "Somma totale: 0";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Nome:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(513, 134);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Cognome:";
+            // 
+            // CognomeBox
+            // 
+            this.CognomeBox.Location = new System.Drawing.Point(516, 150);
+            this.CognomeBox.Name = "CognomeBox";
+            this.CognomeBox.Size = new System.Drawing.Size(100, 20);
+            this.CognomeBox.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(668, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tipo di valuta:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Euro",
+            "Dollari",
+            "Sterline"});
+            this.comboBox1.Location = new System.Drawing.Point(668, 150);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(117, 21);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.Text = "Euro";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.CognomeBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.sommatotale);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NomeBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.confermaPersona);
             this.Controls.Add(this.numericUpDown1);
@@ -142,8 +199,13 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button confermaPersona;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NomeBox;
         private System.Windows.Forms.Label sommatotale;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox CognomeBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
