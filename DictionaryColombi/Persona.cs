@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DictionaryColombi
 {
-    public class Persona : IEquatable<Persona>
+    public class Persona : IComparable<Persona> 
     {
         public string Id { get; private set; }
         public string Name { get; private set; }
@@ -24,6 +24,10 @@ namespace DictionaryColombi
                 return true;
             }
             else return false;
+        }
+        public int CompareTo(Persona p)
+        {
+            return string.Compare(this.Name, p.Name);
         }
         public Persona(string name, string surname)
         {

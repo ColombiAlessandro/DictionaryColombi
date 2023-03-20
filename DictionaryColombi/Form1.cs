@@ -69,6 +69,10 @@ namespace DictionaryColombi
                 Valuta v = new Valuta(comboBox1.Text, numericUpDown1.Value);
                 colletta.AggiungiPersone(p, v);
                 sommatotale.Text = "Somma totale: " + colletta.SommaTotale.ToString() + "€";
+                NomeBox.Text=String.Empty;
+                numericUpDown1.Value = 1;
+                CognomeBox.Text = String.Empty;
+                comboBox1.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -78,6 +82,31 @@ namespace DictionaryColombi
             {
                 updateCarrView();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            colletta.ordinaNome();
+            updateCarrView();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            colletta.ordinaValue();
+            updateCarrView();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Persona p = colletta.Ricerca(numericUpDown2.Value);
+                MessageBox.Show($"La persona cercata è : {p.Name} {p.Surname}");
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

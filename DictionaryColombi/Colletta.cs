@@ -42,7 +42,7 @@ namespace DictionaryColombi
                         case "Sterline":
                             SommaTotale += somma.Valore*(decimal)1.13;
                             break;
-                    }
+                    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
                 }
 
             }
@@ -63,6 +63,34 @@ namespace DictionaryColombi
             }
             return rtr;
         }
+        public void ordinaNome()
+        {
+            SortedDictionary<Persona, Valuta> ordinato = new SortedDictionary<Persona, Valuta>(Elenco);
+            Elenco = new Dictionary<Persona, Valuta>(ordinato);
 
+        }
+        public void ordinaValue()
+        {
+            Dictionary<Persona, Valuta> ordinato = new Dictionary<Persona, Valuta>(Elenco);
+            Elenco = ordinato.OrderByDescending(x => x.Value.Valore).ToDictionary(x => x.Key, x => x.Value);
+
+
+        }
+        public Persona Ricerca(decimal importo)
+        {
+            Persona x = null;
+            foreach (Persona p in Elenco.Keys)
+            {
+                if (Elenco[p].Valore == importo)
+                {
+                    x = p;
+                }
+            }
+            if (x == null)
+            {
+                throw new Exception("Nessuno ha versato l'importo selezionato");
+            }
+            return x;
+        }
     }
 }
